@@ -1,0 +1,87 @@
+<div class="container">
+    <div class="page-header text-center">
+        <h1><span class="fa fa-anchor"></span>Welcome {{user.fName}}</h1>
+        <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+    </div>
+    <div class="row">
+        <!-- LOCAL INFORMATION -->
+        <div class="col-sm-6">
+            <div class="well">
+                <h3><span class="fa fa-user"></span> Local</h3>
+                <p>
+                    <strong>id</strong>: {{user.id}}
+                    <br>
+                    <strong>username</strong>: {{user.username }}
+                    <br>
+                    <!-- <strong>password</strong>: {{user.password }} -->
+                    <strong>Name</strong>: {{user.fName }} {{user.lName}}
+                    <br>
+                    <strong>Email</strong>: {{user.email}}
+                    <br>
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- blogs dump here -->
+    <!-- new blob -->
+    <div class="col-6 text-center">
+
+    </div>
+    {{#each bloggers}}
+    <div class="pages">
+        <div class="blog">
+            <div class="blog-post" id="{{this.postID}}">
+                <h2 class="blog-post-title">{{this.title}}</h2>
+                <p class="blog-post-meta">Written by: {{this.username}} Date Published: {{formatDt this.createTime}}</a></p>
+                <!-- <p class="blog-post-meta">{{formatDt this.createTime}}<a href="#">{{this.username}}</a><a href="/edit/post/>{{this.POSTID}}"</a></p> -->
+                <!-- {{this.content}} -->
+                <p>Status: {{this.status}}</p>
+                <p>Username: {{this.username}}</p>
+                <p>Email : {{this.email}}</p>
+                 <button class="btn btn-outline-dark" type="submit">Activate<i class="fa fa-plus" aria-hidden="true"></i></button>
+                 <!-- <button class="btn btn-outline-dark" type="submit">Edit Post<i class="fa fa-plus" aria-hidden="true"></i></button> -->
+                 <!-- <button class="btn btn-outline-dark" type="submit">Delete Post<i class="fa fa-plus" aria-hidden="true"></i></button> -->
+                 <!-- <h3><a href="/view/{{this.postID}}">{{this.title}}</a></h3> -->
+                 
+                 <!-- <p><a href="/view/{{this.postID}}">View This Post</a></p> -->
+                 <!-- <p><a href="/api/post/delete/{{this.postID}}">Delete This Post</a></p> -->
+
+
+            </div>
+        </div>
+    </div>
+    {{/each}}
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content  login log">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Write A New Blog</h5>
+                    <button type="button" class="close login log" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                      <form class="create-form" id="myForm">
+                        <div class="form-group">
+                            <label for="blog-title">Title:</label>
+                            <input type="text" class="form-control" id="blog-title" placeholder="Title of your blog">
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" id="blog-content" name="blog-content" rows="6" placeholder="Blog Post goes here" required="true" autofocus></textarea>
+                            <button class="btn btn-outline-dark" type="submit">Add Post
+                                <i class="fa fa-plus" aria-hidden="true"></i></button>
+                        </div>
+                    </form>
+                </div>
+               
+                <div class="modal-footer">
+          
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- edit modal -->
+
+
+</div>

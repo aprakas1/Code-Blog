@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Code Blog</title>
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Quickly Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+        function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-mobile-apps -->
+<link href="/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+
+<!-- js -->
+<script src="/js/jquery-1.11.1.min.js"></script>
+<!-- //js -->
+<script src="/js/cms.js"></script>
+<script src="/js/blog.js"></script>
+<!-- start-smoth-scrolling -->
+<script type="text/javascript" src="/js/move-top.js"></script>
+<script type="text/javascript" src="/js/easing.js"></script>
+<script type="text/javascript">
+    jQuery(document).ready(function($) {
+        $(".scroll").click(function(event){     
+            event.preventDefault();
+            $('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+        });
+    });
+</script>
+<!-- start-smoth-scrolling -->
+<!--Adding emoticons library -->
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="/lib/css/emoji.css" rel="stylesheet">
+  <link href="/css/style.css" rel="stylesheet" type="text/css" media="all" />
+  <script src="/js/app.js"></script>
+</head>
+    
+
+<body>
+<div class="banner-body abt">
+    <div class="container">
+    <div class="header">
+    <div class="header-nav">
+        <nav class="navbar navbar-default">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/"><span>Code &amp; </span>Blog</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="hvr-bounce-to-bottom active"><a href="/">Home</a></li>
+                    <li class="hvr-bounce-to-bottom"><a href="/about">About</a></li>
+                    <!-- <li class="hvr-bounce-to-bottom dropdown"><a href="Pages.html">Featured Blogs</a> -->
+                    <li class="hvr-bounce-to-bottom dropdown"><a>Featured Blogs</a>
+                        <div class="dropdown-content">
+
+                         {{#each authors}}
+                            <a href="/pages/{{this.userId}}">{{this.fName}}</a>
+                        {{/each}}
+                        <!--     <a href="#">Arushi</a>
+                            <a href="#">Jessica</a>
+                            <a href="#">Greg</a> -->
+                        </div>
+                    </li>
+                    <li class="hvr-bounce-to-bottom"><a href="/contact">Contact Us</a></li>
+                </ul>
+
+
+
+                  
+      <!--   <p>Hello {{user.name}}</p>
+   
+        <p>Please <a href='/login'>Log In</a></p> -->
+   
+
+
+                {{#if user}}
+                <div class="sign-in">
+                    <ul>
+                        <li><a href="/logout">Logout</a>/</li>
+                        <li><a href="/profile">Hi {{user.username}}</a></li>
+                    </ul>
+                </div>
+                 {{else}}
+                      <div class="sign-in">
+                    <ul>
+                        <li><a href="/login">Sign In </a>/</li>
+                        <li><a href="/contact">Register</a></li>
+                    </ul>
+                </div>
+                 {{/if}}
+
+                {{#if user}}
+                <div class="sign-in2">
+                    <ul>
+                        <li><a href="#" id="createBlog">Write a Blog </a></li>
+                    </ul>
+                </div>
+                {{else}}
+                {{/if}}
+                <!---MODAL ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+               <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Write A New Blog</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                      <form class="create-form" id="myForm">
+                        <div class="form-group">
+                            <!-- <label for="blog-title">Title:</label> -->
+                            <input type="text" class="form-control" required="true" id="blog-title" placeholder="Title of your blog">
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" id="blog-content" name="blog-content" rows="6" placeholder="Blog Post goes here" required="true" autofocus></textarea>
+                            <button class="btn btn-outline-dark" type="submit">Add Post
+                                <i class="fa fa-plus" aria-hidden="true"></i></button>
+                        </div>
+                    </form>
+                </div>
+               
+                <div class="modal-footer">
+          
+                </div>
+            </div>
+        </div>
+    </div>
+                <!---MODAL ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                <!-- JQuery for Modal-->
+               <!--  <script>
+                $('#createBlog').on('click', function(e) {
+                    $('#myModal').modal('show');
+                })
+                </script> -->
+            </div>
+            <!-- /.navbar-collapse -->
+        </nav>
+    </div>
+    <!-- search-scripts -->
+    <script src="/js/classie.js"></script>
+    <script src="/js/uisearch.js"></script>
+    <script>
+    new UISearch(document.getElementById('sb-search'));
+    </script>
+    <!-- //search-scripts -->
+</div>
+<!-- //header -->
+
+
+        {{{ body }}}
+
+
+    </div>
+    </div>
+    <div class="footer">
+    <div class="container">
+        <div class="footer-grids">
+            <!-- <div class="col-md-3 footer-grid">
+                    <h3>cumque nihil impedit</h3>
+                    <div class="footer-grd-left">
+                        <img src="images/11.jpg" class="img-responsive" alt=" " />
+                    </div>
+                    <div class="footer-grd-left">
+                        <p>Nam libero tempore, cum 
+                            soluta nobis est eligendi optio cumque nihil impedit quo minus 
+                            id quod maxime placeat facere possimus, omnis voluptas assumenda 
+                            est, omnis dolor repellendus</p>
+                    </div> -->
+            <div class="clearfix"> </div>
+        </div>
+        <div class="col-md-4 footer-grid">
+            <h3> Check us out on Github </h3>
+            <ul>
+                <li><a href="https://github.com/vGknight"> <span class="git-name">Greg Knight's Github</span></a></li>
+                <li><a href="https://github.com/hcdcorp"><span class="git-name">Jessica Fain's Github</span></a></li>
+                <li><a href="https://github.com/aprakas1"><span class="git-name">Arushi Prakash's Github</span></a></li>
+<!--                 <li><a href="#">facilis est et expedita</a></li>
+ -->            </ul>
+        </div>
+        <div class="col-md-3 footer-grid">
+            <!-- <h3>Flckr Posts</h3>
+                    <div class="footer-grd">
+                        <img src="images/7.jpg" class="img-responsive" alt=" " />
+                    </div>
+                    <div class="footer-grd">
+                        <img src="images/8.jpg" class="img-responsive" alt=" " />
+                    </div>
+                    <div class="footer-grd">
+                        <img src="images/9.jpg" class="img-responsive" alt=" " />
+                    </div>
+                    <div class="clearfix"> </div>
+                    <div class="footer-grd">
+                        <img src="images/10.jpg" class="img-responsive" alt=" " />
+                    </div>
+                    <div class="footer-grd">
+                        <img src="images/7.jpg" class="img-responsive" alt=" " />
+                    </div>
+                    <div class="footer-grd">
+                        <img src="images/8.jpg" class="img-responsive" alt=" " />
+                    </div>
+                    <div class="clearfix"> </div> -->
+        </div>
+        <div class="col-md-5 footer-grid">
+            <h3>Contact Us</h3>
+            <ul>
+                <li><a href="https://plus.google.com/u/0/106935013180526365148"> <span class="network-name">Greg Knight's Google+</span></a></li>
+                <li><a href="https://plus.google.com/u/0/108170925251380322267"> <span class="network-name">Jessica Fain's Google+</span></a></li>
+                <li><a href="https://plus.google.com/u/0/116386876361832983908"> <span class="network-name">Arushi Prakash's Google+</span></a></li>
+            </ul>
+        </div>
+        <div class="clearfix"> </div>
+        <!-- </div> -->
+        <!-- </div> -->
+        <div class="footer-bottom">
+            <div class="container">
+                <p>© 2017 CWRU Coding BootCamp Project #2</p>
+            </div>
+        </div>
+        <!-- //footer -->
+        <!-- <script type="text/javascript" src="jquery-1.8.3.js"></script>
+<script src="js/cms.js"></script>
+<script src="js/blog.js"></script> -->
+        <!-- for bootstrap working -->
+        <script src="/js/bootstrap.js">
+        </script>
+        <!-- //for bootstrap working -->
+        <!-- ** Emoji packages ** -->
+        <!--          <script src="lib/js/config.js"></script>
+          <script src="lib/js/util.js"></script>
+          <script src="lib/js/jquery.emojiarea.js"></script>
+          <script src="lib/js/emoji-picker.js"></script> -->
+        <!-- </body>
+</body>

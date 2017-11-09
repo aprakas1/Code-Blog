@@ -1,0 +1,23 @@
+<div class="pages">
+    <div class="blog">
+        {{#each blog}}
+        <div class="blog-left-grid">
+            <div class="blog-left-grid-left">
+                <h3><a href="single.html">{{this.title}}</a></h3>
+                <!-- <p>by <span>Arushi, Jessica, Greg</span> | October 29,2017 | <span> -->
+                <p>by <span>{{this.username}}</span> | {{formatDt this.createTime}} | <span>Coding Bootcamp</span></p>
+            </div>
+            <div class="blog-left-grid-right">
+                <!-- <a href="#" class="hvr-bounce-to-bottom non">20 Comments</a> -->
+            </div>
+            <div class="clearfix"> </div>
+            <a href="single.html"><img src="images/4.jpg" alt=" " class="img-responsive"></a>
+            <p class="para"> {{this.content}} </p>
+            <!--   <div class="rd-mre">
+                    <a href="single.html" class="hvr-bounce-to-bottom quod">Read More</a>
+                </div> -->
+        </div>
+        {{/each}}
+        <div class="clearfix"> </div>
+    </div>
+</div>
